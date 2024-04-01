@@ -1,59 +1,46 @@
 package br.edu.infnet.erickfilho.model.domain;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Escola {
 
-    private String nome;
-    private String email;
-    private List<Estudante> estudantes;
-    public Endereco endereco;
+    private long id;
+    private String name;
+    private Endereco endereco;
+    private String cep;
 
-    public Escola() {
+    public Escola() {}
 
-    }
-    public Escola(String nome) {
-        this();
-    }
-
-    public Escola(String nome, String email) {
-        this(nome);
-        this.setEmail(email);
+    public Escola(long id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
-    public Escola(String nome, String email, Endereco endereco) {
-        this(nome, email);
-        this.setEndereco(endereco);
-    }
-
-
-    @Override
-    public String toString() {
-        return "Escola{" +
-                "nome='" + nome + '\'' +
-                ", email='" + email + '\'';
-    }
-
-    public String getemail(){
-        return email;
-    }
-    private void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public Endereco getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(Endereco endereco) {
+    public Escola(long id, String name, Endereco endereco, String cep ) {
+        this.id = id;
+        this.name = name;
         this.endereco = endereco;
     }
+
+
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
+
+    public long getId() { return id; }
+    public void setId(long id) { this.id = id; }
+
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+
+
+    public Endereco getEndereco() { return endereco; }
+    public void setEndereco(Endereco endereco) { this.endereco = endereco; }
+
+
+
 }
